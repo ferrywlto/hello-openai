@@ -7,7 +7,8 @@ builder.AddMongoDBClient("mongodb");
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
-
+builder.AddQdrantClient("qdrant");
+builder.AddMongoDBClient("mongo");
 
 var app = builder.Build();
 
