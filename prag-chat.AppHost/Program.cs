@@ -3,7 +3,9 @@ var builder = DistributedApplication.CreateBuilder(args);
 var mongo = builder.AddMongoDB("mongo");
 var mongodb = mongo.AddDatabase("mongodb");
 
-var qdrant = builder.AddQdrant("qdrant");
+var qdrant = builder
+    .AddQdrant("qdrant")
+    .WithDataVolume();
 
 var apiService = builder
     .AddProject<Projects.prag_chat_ApiService>("apiservice")
